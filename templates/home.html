@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+   <style>
+    #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    #customers td,
+    #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+    
+    #customers tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    
+    #customers tr:hover {
+        background-color: #ddd;
+    }
+    
+    #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+    }
+    
+    .button1 {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        transition: all linear .3s;
+    }
+    
+    .button1:hover {
+        background-color: #038607;
+    }
+    
+    .button2 {
+        background-color: #149ec0;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        transition: all linear .3s;
+    }
+    
+    .button2:hover {
+        background-color: #036780;
+    }
+    
+    .button3 {
+        background-color: #dd0000;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        transition: all linear .3s;
+    }
+    
+    .button3:hover {
+        background-color: #680000;
+    }
+   </style>
+</head>
+
+<body>
+    <h1>User Profile</h1>
+
+    <table id="customers">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Contact</th>
+            <th>Company</th>
+            <th>Actions</th>
+        </tr>
+        {% for i in userData %}
+        <tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.age }}</td>
+            <td>{{ i.contact }}</td>
+            <td>{{ i.company.company }}</td>
+            <td><button class="button1">Read</button><button class="button2">Edit</button><button
+                    class="button3">delete</button></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</body>
+
+</html>
